@@ -2,10 +2,14 @@ import React from 'react';
 
 import ListItem from './ListItem';
 
-function List(props) {
+function List({ items }) {
     return (
         <ul>
-            <ListItem />
+            {items.map((item, index) => {
+                return (
+                    <ListItem key={index} item={item} />
+                )
+            })}
         </ul>
     )
 }
